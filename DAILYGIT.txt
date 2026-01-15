@@ -1,0 +1,51 @@
+Good question. This is the everyday Git flow from here on. Simple and repeatable.
+
+Every time you work on the project
+1. Check what changed (optional but smart)
+git status
+
+2. Stage your changes
+
+All files:
+
+git add .
+
+
+Or a specific file:
+
+git add path/to/file
+
+3. Commit with a clear message
+git commit -m "Describe what you changed"
+
+
+Think small, honest messages. What actually changed.
+
+4. Push to GitHub
+git push
+
+
+That’s it. This is your normal loop.
+
+If you’re starting work after a break (important habit)
+
+Before coding:
+
+git pull --rebase
+
+
+This makes sure you’re up to date before adding new commits.
+
+One-line daily workflow (when you’re comfortable)
+git pull --rebase
+git add .
+git commit -m "your message"
+git push
+
+
+-----------------------------
+git pull --rebase
+git add .
+git commit -m "your message"
+git push
+-----------------------------

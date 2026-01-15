@@ -14,12 +14,32 @@ input {
 .container {
   position: relative;
   width: 100%;
-  background-image: url("../assets/content2.jpg");
+  /* background-image: url("../assets/content2.jpg"); */
+  background-image: url("../assets/KASHBGBANNER01.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-container {
+  position: relative;
+  width: 70vw;
+  height: 80vh;
+  min-width: 800px;
+  min-height: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 10;
 }
 
 .forms-container {
@@ -198,17 +218,33 @@ form.sign-in-form {
 
 .btn.transparent {
   margin: 0;
-  background: none;
-  border: none;
+  background: transparent;
+  border: 2px solid #fff;
   width: auto;
-  height: auto;
+  min-width: 150px;
+  height: 45px;
+  padding: 0 25px;
+  border-radius: 50px;
   font-weight: 600;
-  font-size: 0.9rem;
-  /* color: #333; */
+  font-size: 0.85rem;
   color: #fff;
-  text-decoration: underline;
-  text-transform: none;
-  margin-top: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn.transparent:hover {
+  background-color: #fff;
+  color: #5995fd;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .image {
@@ -267,12 +303,6 @@ form.sign-in-form {
 /* This matches my `.sign-up-mode` logic above: .signin-signup left: 25% (Left side). */
 /* So I should add the class `sign-up-mode` by default in HTML or JS. */
 
-/* Lets adjust the CSS to make "Sign Up Mode" the default (no class) if thats easier, or just add the class. */
-/* Ill stick to: No Class = Sign In Mode (Form Right). Class "sign-up-mode" = Sign Up Mode (Form Left). */
-/* Wait, usually "Sign In" is the default. */
-/* But the user provided a "Sign Up" screen. */
-/* I will make sure the JS adds the class initially if needed. */
-
 /* Lets refine the CSS for the "No Class" state (Sign In Mode - Form Right, Image Left). */
 .signin-signup {
   left: 75%; /* Right side */
@@ -302,6 +332,19 @@ form.sign-up-form {
 
 /* Responsive */
 @media (max-width: 870px) {
+  .glass-container {
+      width: 100%;
+      height: 100%;
+      min-width: auto;
+      min-height: auto;
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+  }
+
   .container {
     min-height: 800px;
     height: 100vh;
